@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <name>vortex-of-chance-lottery</name>
+  <version>1.0.0</version>
+  <description>Interactive lottery games for VortexOfChance website</description>
+  <main>index.html</main>
+  <scripts>
+    <compile-golden-rush>sass css/golden-rush.scss css/golden-rush.css</compile-golden-rush>
+    <compile-instant-cash>sass css/instant-cash.scss css/instant-cash.css</compile-instant-cash>
+    <compile-instant-win>sass css/instant-win.scss css/instant-win.css</compile-instant-win>
+    <compile-all>sass css/*.scss css/*.css</compile-all>
+    <watch>sass --watch css:css</watch>
+  </scripts>
+  <keywords>
+    <keyword>lottery</keyword>
+    <keyword>games</keyword>
+    <keyword>instant-win</keyword>
+    <keyword>scss</keyword>
+    <keyword>html</keyword>
+    <keyword>javascript</keyword>
+  </keywords>
+  <author></author>
+  <license>ISC</license>
+  <devDependencies>
+    <dependency name="sass" version="^1.83.0" />
+  </devDependencies>
+</project> 

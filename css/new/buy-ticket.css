@@ -1,0 +1,274 @@
+@charset "UTF-8";
+/* Основной контейнер страницы лотереи */
+.lottery-details {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 900px;
+  overflow: hidden;
+  padding: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Эффект при наведении - приподнимаем карточку */
+  /* Шапка с информацией о лотерее */
+  /* Основная информация о лотерее */
+  /* Секция выбора количества билетов */
+}
+.lottery-details:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.lottery-details .lottery-header {
+  background: linear-gradient(135deg, #fd7e14, #f06d06);
+  color: white;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  /* Декоративный паттерн для фона */
+  /* Индикатор цены лотереи */
+}
+.lottery-details .lottery-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="10" height="10" fill="rgba(255,255,255,0.05)"/></svg>');
+  opacity: 0.2;
+}
+.lottery-details .lottery-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.lottery-details .lottery-header .lottery-price {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  backdrop-filter: blur(2px);
+}
+.lottery-details .lottery-header .lottery-price span {
+  font-weight: 700;
+}
+.lottery-details .lottery-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  /* Изображение лотереи */
+  /* Описание лотереи с ключевыми данными */
+}
+@media (max-width: 768px) {
+  .lottery-details .lottery-info {
+    grid-template-columns: 1fr;
+  }
+}
+.lottery-details .lottery-info .lottery-image {
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.lottery-details .lottery-info .lottery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.lottery-details .lottery-info .lottery-image img:hover {
+  transform: scale(1.05);
+}
+.lottery-details .lottery-info .lottery-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Общий стиль для информационных блоков */
+  /* Стиль джекпота - выделяем для привлечения внимания */
+  /* Стиль даты розыгрыша */
+  /* Стиль шансов на победу */
+}
+.lottery-details .lottery-info .lottery-description p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+.lottery-details .lottery-info .lottery-description .lottery-jackpot, .lottery-details .lottery-info .lottery-description .lottery-date, .lottery-details .lottery-info .lottery-description .lottery-odds {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid #fd7e14;
+  transition: transform 0.2s ease;
+}
+.lottery-details .lottery-info .lottery-description .lottery-jackpot:hover, .lottery-details .lottery-info .lottery-description .lottery-date:hover, .lottery-details .lottery-info .lottery-description .lottery-odds:hover {
+  transform: translateX(5px);
+}
+.lottery-details .lottery-info .lottery-description .lottery-jackpot h3, .lottery-details .lottery-info .lottery-description .lottery-date h3, .lottery-details .lottery-info .lottery-description .lottery-odds h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: #6c757d;
+}
+.lottery-details .lottery-info .lottery-description .lottery-jackpot div, .lottery-details .lottery-info .lottery-description .lottery-date div, .lottery-details .lottery-info .lottery-description .lottery-odds div {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #343a40;
+}
+.lottery-details .lottery-info .lottery-description .lottery-jackpot {
+  border-left-color: #fd7e14;
+}
+.lottery-details .lottery-info .lottery-description .lottery-jackpot div {
+  color: #fd7e14;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.lottery-details .lottery-info .lottery-description .lottery-date {
+  border-left-color: #20c997;
+}
+.lottery-details .lottery-info .lottery-description .lottery-odds {
+  border-left-color: #6610f2;
+}
+.lottery-details .ticket-selection {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+  /* Счетчик билетов с кнопками +/- */
+  /* Отображение итоговой стоимости */
+  /* Кнопка покупки билетов */
+}
+.lottery-details .ticket-selection h2 {
+  font-size: 1.5rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+.lottery-details .ticket-selection .ticket-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.lottery-details .ticket-selection .ticket-counter button {
+  background-color: #f8f9fa;
+  border: 2px solid #dee2e6;
+  color: #495057;
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.lottery-details .ticket-selection .ticket-counter button:hover {
+  background-color: #e9ecef;
+  border-color: #ced4da;
+}
+.lottery-details .ticket-selection .ticket-counter button:active {
+  transform: scale(0.95);
+}
+.lottery-details .ticket-selection .ticket-counter input {
+  width: 80px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0 1rem;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+.lottery-details .ticket-selection .ticket-counter input:focus {
+  outline: none;
+  border-color: #fd7e14;
+  box-shadow: 0 0 0 3px rgba(253, 126, 20, 0.25);
+}
+.lottery-details .ticket-selection .total-price {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 1.5rem;
+}
+.lottery-details .ticket-selection .total-price span {
+  font-weight: 700;
+  color: #fd7e14;
+}
+.lottery-details .ticket-selection .buy-button, .lottery-details .ticket-selection .buy-tickets-btn {
+  background: linear-gradient(135deg, #fd7e14, #f06d06);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(253, 126, 20, 0.3);
+}
+.lottery-details .ticket-selection .buy-button:hover, .lottery-details .ticket-selection .buy-tickets-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(253, 126, 20, 0.4);
+}
+.lottery-details .ticket-selection .buy-button:active, .lottery-details .ticket-selection .buy-tickets-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(253, 126, 20, 0.4);
+}
+
+/* Хлебные крошки для навигации */
+.breadcrumb {
+  max-width: 900px;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+.breadcrumb a {
+  color: #fd7e14;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.breadcrumb a:hover {
+  color: #f06d06;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 576px) {
+  .lottery-details {
+    margin: 1rem;
+    border-radius: 10px;
+  }
+  .lottery-details .lottery-header {
+    padding: 1.5rem;
+  }
+  .lottery-details .lottery-header h1 {
+    font-size: 1.8rem;
+  }
+  .lottery-details .lottery-header .lottery-price {
+    font-size: 1rem;
+  }
+  .lottery-details .lottery-info {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .lottery-details .lottery-info .lottery-image {
+    height: 200px;
+  }
+  .lottery-details .lottery-info .lottery-description p {
+    font-size: 1rem;
+  }
+  .lottery-details .ticket-selection {
+    padding: 1.5rem;
+  }
+  .lottery-details .ticket-selection h2 {
+    font-size: 1.3rem;
+  }
+  .lottery-details .ticket-selection .buy-button,
+  .lottery-details .ticket-selection .buy-tickets-btn {
+    width: 100%;
+  }
+}

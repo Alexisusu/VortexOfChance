@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VortexOfChance - Лотереи</title>
+    <link rel="stylesheet" href="css/styles.css?v=1.2">
+    <link rel="stylesheet" href="css/improved-styles.css?v=1.2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="VortexOfChance Logo" width="24" height="24">
+                <span>VortexOfChance</span>
+            </a>
+        </div>
+        <button class="menu-btn">МЕНЮ</button>
+        <nav class="dropdown-menu">
+            <div class="menu-item">
+                <a href="buy-ticket.html">купить билетик</a>
+            </div>
+            <div class="menu-item">
+                <a href="#" class="has-submenu">мгновенные лотереи</a>
+                <div class="submenu">
+                    <a href="lucky_chance.html" class="submenu-item">Счастливый шанс</a>
+                    <a href="instant-cash.html" class="submenu-item">Мгновенный куш</a>
+                    <a href="golden-rush.html" class="submenu-item">Золотая лихорадка</a>  
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Победители</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Служба поддержки</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Правила игры</a>
+            </div>
+        </nav>
+        <a href="login.html" class="login-btn">ВХОД</a>
+    </header>
+
+    <main>
+        <section class="main-banner">
+            <div class="banner-content">
+                <h1>Испытайте свою удачу с <span class="highlight">VortexOfChance</span></h1>
+                <p>Крупнейшие выигрыши и лучшие лотереи в одном месте</p>
+                <div class="banner-buttons">
+                    <a href="buy-ticket.html" class="banner-btn primary-btn"><i class="fas fa-ticket-alt"></i> Купить билет</a>
+                    <a href="#" class="banner-btn secondary-btn"><i class="fas fa-info-circle"></i> Узнать больше</a>
+                </div>
+            </div>
+            <div class="jackpot-info">
+                <div class="jackpot-amount">
+                    <span class="currency">$</span>
+                    <span class="amount">5,000,000</span>
+                </div>
+                <p class="jackpot-label">Текущий джекпот</p>
+                <div class="timer">
+                    <p>До розыгрыша осталось:</p>
+                    <div class="countdown">
+                        <div class="time-unit">
+                            <span class="number">12</span>
+                            <span class="label">Часов</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">45</span>
+                            <span class="label">Минут</span>
+                        </div>
+                        <div class="time-unit">
+                            <span class="number">30</span>
+                            <span class="label">Секунд</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="lottery-selection">
+            <div class="section-title">
+                <h2>Выберите свою игру</h2>
+                <p>Популярные моментальные лотереи и розыгрыши</p>
+                <a href="#" class="view-all-btn">Смотреть все лотереи</a>
+            </div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </section>
+
+        <section class="promo-images">
+            <a href="lucky_chance.html" class="promo-image">
+                <img src="img/lucky_chance.png" alt="Счастливый шанс">
+                <div class="promo-overlay">
+                    <h3>Счастливый шанс</h3>
+                    <p>Моментальная лотерея с крупными призами</p>
+                    <span class="promo-btn">Играть сейчас</span>
+                </div>
+            </a>
+            <a href="instant-cash.html" class="promo-image">
+                <img src="img/instant_jackpot.png" alt="Мгновенный куш">
+                <div class="promo-overlay">
+                    <h3>Мгновенный куш</h3>
+                    <p>Сорви куш прямо сейчас</p>
+                    <span class="promo-btn">Играть сейчас</span>
+                </div>
+            </a>
+            <a href="golden-rush.html" class="promo-image">
+                <img src="img/gold_rush.png" alt="Золотая лихорадка">
+                <div class="promo-overlay">
+                    <h3>Золотая лихорадка</h3>
+                    <p>Найди золото и выиграй большой приз</p>
+                    <span class="promo-btn">Играть сейчас</span>
+                </div>
+            </a>
+            <a href="buy-ticket.html" class="promo-image">
+                <img src="img/Buy_a_ticket.png" alt="Купить билет">
+                <div class="promo-overlay">
+                    <h3>Купить билет</h3>
+                    <p>Участвуй в еженедельных розыгрышах</p>
+                    <span class="promo-btn">Купить</span>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#2c2c2c" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-column contact-info">
+                <h3>Контакты</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 220006, г. Минск, ул. Свердлова, 13а</p>
+                <p><i class="fas fa-file-alt"></i> Сектор документационного обеспечения</p>
+                <p><i class="fas fa-phone"></i> Тел./Факс.: (8-017) 393 62 17</p>
+                <p><i class="fas fa-envelope"></i> E-mail: root@belstu.by</p>
+                <p><i class="fas fa-users"></i> Приемная комиссия, Тел.: (8-017) 379 63 75</p>
+                <p><i class="fas fa-envelope"></i> E-mail: pk@belstu.by</p>
+                <p><i class="fas fa-certificate"></i> Рег. свидетельство № 114110144В от 13.06.2011</p>
+                <p><i class="fas fa-database"></i> Государственного регистра информационных ресурсов</p>
+            </div>
+            <div class="footer-column quick-links">
+                <h3>Полезные ссылки</h3>
+                <a href="#"><i class="fas fa-headset"></i> Связаться с нами</a>
+                <a href="#"><i class="fas fa-comment-alt"></i> Система обращений</a>
+                <a href="#"><i class="fas fa-envelope"></i> Почта университета</a>
+                <a href="#"><i class="fas fa-phone-volume"></i> Телефонный справочник</a>
+                <a href="#"><i class="fas fa-cookie"></i> Отозвать согласие на обработку куки</a>
+            </div>
+            <div class="footer-column subscribe">
+                <h3>Оставайтесь с нами</h3>
+                <p>Подпишитесь на нашу рассылку и будьте в курсе всех новостей и акций</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Введите ваш email">
+                    <button type="submit">Подписаться</button>
+                </div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 VortexOfChance. Все права защищены.</p>
+            <div class="footer-links">
+                <a href="#">Условия использования</a>
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Ответственная игра</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const menuBtn = document.querySelector('.menu-btn');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            if (menuBtn && dropdownMenu) {
+                menuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('active');
+                });
+            }
+            
+            
+            const hasSubmenuLinks = document.querySelectorAll('.has-submenu');
+            hasSubmenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        submenu.classList.toggle('active');
+                    }
+                });
+            });
+            
+            
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown-menu') && !e.target.closest('.menu-btn')) {
+                    if (dropdownMenu) {
+                        dropdownMenu.classList.remove('active');
+                    }
+                    
+                    document.querySelectorAll('.submenu.active').forEach(submenu => {
+                        submenu.classList.remove('active');
+                    });
+                }
+            });
+            
+            
+            function updateCountdown() {
+                const now = new Date();
+                const hoursElement = document.querySelector('.time-unit:nth-child(1) .number');
+                const minutesElement = document.querySelector('.time-unit:nth-child(2) .number');
+                const secondsElement = document.querySelector('.time-unit:nth-child(3) .number');
+                
+                if (hoursElement && minutesElement && secondsElement) {
+                    const hours = 23 - now.getHours();
+                    const minutes = 59 - now.getMinutes();
+                    const seconds = 59 - now.getSeconds();
+                    
+                    hoursElement.textContent = hours < 10 ? `0${hours}` : hours;
+                    minutesElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
+                    secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
+                }
+            }
+            
+            
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html> 

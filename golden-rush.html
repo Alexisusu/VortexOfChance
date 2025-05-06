@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Золотая лихорадка - VortexOfChance</title>
+    <link rel="stylesheet" href="css/styles.css?v=1.1">
+    <link rel="stylesheet" href="css/improved-styles.css?v=1.1">
+    <link rel="stylesheet" href="css/golden-rush.css?v=1.1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="VortexOfChance Logo">
+                <span>VortexOfChance</span>
+            </a>
+        </div>
+        <button class="menu-btn">МЕНЮ</button>
+        <nav class="dropdown-menu">
+            <div class="menu-item">
+                <a href="buy-ticket.html">купить билетик</a>
+            </div>
+            <div class="menu-item">
+                <a href="#" class="has-submenu">мгновенные лотереи</a>
+                <div class="submenu">
+                    <a href="lucky_chance.html" class="submenu-item">Счастливый шанс</a>
+                    <a href="instant-cash.html" class="submenu-item">Мгновенный куш</a>
+                    <a href="golden-rush.html" class="submenu-item">Золотая лихорадка</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Победители</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Служба поддержки</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Правила игры</a>
+            </div>
+        </nav>
+        <a href="login.html" class="login-btn">ВХОД</a>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h1>Золотая лихорадка</h1>
+                <p>Выберите 5 ячеек и найдите сокровища!</p>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div class="container">
+                <div class="game-container">
+                    <div class="game-info">
+                        <div class="game-rules">
+                            <h2>Правила игры</h2>
+                            <p>Выберите 5 из 9 ячеек и узнайте, что скрывается под ними!</p>
+                            <ul>
+                                <li><strong>Купите билет</strong> - нажмите кнопку "Купить билет"</li>
+                                <li><strong>Выберите 5 ячеек</strong> - они откроются автоматически</li>
+                                <li><strong>3 одинаковых символа</strong> - выигрыш по таблице призов</li>
+                                <li><strong>3 золотых самородка</strong> - джекпот 1000$!</li>
+                            </ul>
+                            <div class="prize-table">
+                                <h3>Таблица призов</h3>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-coins"></i></span>
+                                    <span class="prize-value">1000$</span>
+                                    <span class="prize-odds">шанс 1:200</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-gem"></i></span>
+                                    <span class="prize-value">500$</span>
+                                    <span class="prize-odds">шанс 1:125</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-hammer"></i></span>
+                                    <span class="prize-value">200$</span>
+                                    <span class="prize-odds">шанс 1:83</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-shovel"></i></span>
+                                    <span class="prize-value">100$</span>
+                                    <span class="prize-odds">шанс 1:67</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-mountain"></i></span>
+                                    <span class="prize-value">50$</span>
+                                    <span class="prize-odds">шанс 1:50</span>
+                                </div>
+                            </div>
+                            <div class="overall-odds">
+                                <p>Общий шанс на выигрыш: примерно 1:4</p>
+                                <p>Теоретический возврат игроку (RTP): 70%</p>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <div class="game-price">
+                                <span>Стоимость: </span>
+                                <span class="price-value">15$</span>
+                            </div>
+                            <button class="buy-ticket-btn">Купить билет</button>
+                            <div class="selections-counter">
+                                <span>Выбрано ячеек: </span>
+                                <span id="selections-count">0</span><span>/5</span>
+                                <small style="display: block; margin-top: 5px; font-style: italic;">Ячейки откроются автоматически после выбора всех 5</small>
+                            </div>
+                            <button class="new-game-btn" style="display: none;">Новая игра</button>
+                        </div>
+                    </div>
+                    
+                    <div class="game-field">
+                        <div class="game-board disabled">
+                            <div class="cell" data-index="0">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="1">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="2">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="3">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="4">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="5">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="6">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="7">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                            <div class="cell" data-index="8">
+                                <div class="cell-inner">
+                                    <div class="cell-front">?</div>
+                                    <div class="cell-back"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="game-result" style="display: none;">
+                            <div class="result-icon"><i class="fas fa-question-circle"></i></div>
+                            <h3 class="result-title">Результат</h3>
+                            <p class="result-message">Выберите 5 ячеек и проверьте свою удачу!</p>
+                            <div class="winning-amount" style="display: none;">0$</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#2c2c2c" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>VortexOfChance — это современная платформа для участия в лотереях. Мы предлагаем разнообразные лотереи с прозрачными правилами и честными розыгрышами.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Полезные ссылки</h3>
+                <ul class="footer-links">
+                    <li><a href="winners.html"><i class="fas fa-trophy"></i> Победители</a></li>
+                    <li><a href="rules.html"><i class="fas fa-gavel"></i> Правила</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Служба поддержки</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> Частые вопросы</a></li>
+                    <li><a href="terms.html"><i class="fas fa-file-alt"></i> Условия использования</a></li>
+                    <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 220000, г. Минск, ул. Лотерейная, 777</li>
+                    <li><i class="fas fa-phone"></i> +375 29 123-45-67</li>
+                    <li><i class="fas fa-envelope"></i> info@vortexofchance.com</li>
+                </ul>
+                <div class="subscribe-form">
+                    <h4>Подпишитесь на новости</h4>
+                    <div class="form-group">
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2023 VortexOfChance. Все права защищены.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Условия использования</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="responsible.html">Ответственная игра</a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Completely rewritten JavaScript for maximum reliability -->
+    <script>
+        // Global game state
+        const gameState = {
+            hasTicket: false,
+            selectedCells: [],
+            maxSelections: 5,
+            isGameOver: false,
+            winningIcon: null
+        };
+
+        // Initialize the game when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Initializing Golden Rush game...');
+            
+            // Initialize buy ticket button
+            const buyButton = document.querySelector('.buy-ticket-btn');
+            if (buyButton) {
+                buyButton.addEventListener('click', buyTicket);
+            }
+            
+            // Initialize new game button
+            const newGameButton = document.querySelector('.new-game-btn');
+            if (newGameButton) {
+                newGameButton.addEventListener('click', function() {
+                    location.reload(); // Simplest way to reset everything
+                });
+            }
+            
+            // Initialize all cells with proper event listeners
+            const cells = document.querySelectorAll('.cell');
+            cells.forEach(cell => {
+                // Make absolutely sure they're clickable
+                cell.style.pointerEvents = 'auto';
+                cell.style.cursor = 'pointer';
+                
+                // Clear any existing listeners (to prevent duplicates)
+                const oldCell = cell.cloneNode(true);
+                cell.parentNode.replaceChild(oldCell, cell);
+                
+                // Add our own click handler
+                oldCell.addEventListener('click', function() {
+                    handleCellClick(this);
+                });
+            });
+            
+            // Reset counter to zero
+            updateSelectionCounter(0);
+            
+            console.log('Initialization complete!');
+        });
+        
+        // Function to handle buying a ticket
+        function buyTicket() {
+            console.log('Buying ticket...');
+            const gameBoard = document.querySelector('.game-board');
+            if (gameBoard) {
+                gameBoard.classList.remove('disabled');
+            }
+            
+            const buyButton = document.querySelector('.buy-ticket-btn');
+            if (buyButton) {
+                buyButton.style.display = 'none';
+            }
+            
+            gameState.hasTicket = true;
+        }
+        
+        // Function to handle cell clicks
+        function handleCellClick(cell) {
+            console.log('Cell clicked:', cell);
+            
+            // Check if the player has a ticket
+            if (!gameState.hasTicket) {
+                alert('Пожалуйста, сначала купите билет!');
+                return;
+            }
+            
+            // Check if the game is already over
+            if (gameState.isGameOver) {
+                console.log('Game is already over, ignoring click');
+                return;
+            }
+            
+            // Check if this cell is already selected
+            const isSelected = cell.classList.contains('selected');
+            const cellIndex = parseInt(cell.getAttribute('data-index'));
+            
+            if (isSelected) {
+                // Deselect the cell
+                cell.classList.remove('selected');
+                
+                // Update game state
+                gameState.selectedCells = gameState.selectedCells.filter(index => index !== cellIndex);
+                
+                // Update counter
+                updateSelectionCounter(gameState.selectedCells.length);
+            } else {
+                // Check if max selections reached
+                if (gameState.selectedCells.length >= gameState.maxSelections) {
+                    alert(`Вы можете выбрать максимум ${gameState.maxSelections} ячеек!`);
+                    return;
+                }
+                
+                // Select the cell
+                cell.classList.add('selected');
+                
+                // Update game state
+                gameState.selectedCells.push(cellIndex);
+                
+                // Update counter
+                updateSelectionCounter(gameState.selectedCells.length);
+                
+                // Check if all 5 cells are selected
+                if (gameState.selectedCells.length === gameState.maxSelections) {
+                    // Start revealing cells after a short delay
+                    setTimeout(revealSelectedCells, 500);
+                }
+            }
+        }
+        
+        // Function to update the selection counter with visual feedback
+        function updateSelectionCounter(count) {
+            const counter = document.getElementById('selections-count');
+            if (counter) {
+                // Update the text
+                counter.textContent = count.toString();
+                
+                // Add visual feedback
+                counter.style.color = 'red';
+                counter.style.fontWeight = 'bold';
+                counter.style.fontSize = '1.2em';
+                
+                // Reset styles after a short delay
+                setTimeout(() => {
+                    counter.style.color = '';
+                    counter.style.fontWeight = '';
+                    counter.style.fontSize = '';
+                }, 300);
+            }
+        }
+        
+        // Function to reveal selected cells
+        function revealSelectedCells() {
+            gameState.isGameOver = true;
+            
+            const selectedCells = document.querySelectorAll('.cell.selected');
+            
+            const iconOptions = [
+                { class: 'fas fa-coins', color: 'gold' },
+                { class: 'fas fa-gem', color: '#9b59b6' },
+                { class: 'fas fa-hammer', color: '#3498db' },
+                { class: 'fas fa-shovel', color: '#e67e22' },
+                { class: 'fas fa-mountain', color: '#34495e' }
+            ];
+            
+            // Randomly decide if player will win (30% chance)
+            const willWin = Math.random() < 0.3;
+            
+            // Prepare array to track which icons were assigned
+            const assignedIcons = [];
+            
+            // Randomly assign icons to cells with proper win/loss logic
+            selectedCells.forEach((cell, index) => {
+                setTimeout(() => {
+                    // Add revealed class for CSS animation
+                    cell.classList.add('revealed');
+                    
+                    const cellBack = cell.querySelector('.cell-back');
+                    if (cellBack) {
+                        cellBack.innerHTML = '';
+                        
+                        const icon = document.createElement('i');
+                        let iconInfo;
+                        
+                        if (willWin && index < 3) {
+                            // If win condition, first 3 cells get same icon
+                            iconInfo = iconOptions[Math.floor(Math.random() * iconOptions.length)];
+                            
+                            // Save the winning icon for first cell to use on other winning cells
+                            if (index === 0) {
+                                gameState.winningIcon = iconInfo;
+                            } else {
+                                iconInfo = gameState.winningIcon;
+                            }
+                        } else {
+                            // Random assignment for loss condition or non-matching cells
+                            iconInfo = iconOptions[Math.floor(Math.random() * iconOptions.length)];
+                            
+                            // Make sure we don't accidentally create a win condition
+                            if (!willWin) {
+                                // Keep track of assigned icons to prevent accidental 3 matches
+                                const iconCounts = {};
+                                assignedIcons.forEach(ic => {
+                                    iconCounts[ic.class] = (iconCounts[ic.class] || 0) + 1;
+                                });
+                                
+                                // If this would create a third match, pick a different icon
+                                while (iconCounts[iconInfo.class] >= 2) {
+                                    iconInfo = iconOptions[Math.floor(Math.random() * iconOptions.length)];
+                                }
+                            }
+                        }
+                        
+                        // Save the assigned icon
+                        assignedIcons.push(iconInfo);
+                        
+                        icon.className = iconInfo.class;
+                        icon.style.color = iconInfo.color;
+                        cellBack.appendChild(icon);
+                    }
+                    
+                    if (index === selectedCells.length - 1) {
+                        setTimeout(() => showResult(willWin, assignedIcons), 1000);
+                    }
+                }, index * 500);
+            });
+        }
+        
+        function showResult(isWin, assignedIcons) {
+            const resultContainer = document.querySelector('.game-result');
+            if (resultContainer) {
+                resultContainer.style.display = 'block';
+                
+                const resultIcon = resultContainer.querySelector('.result-icon');
+                const resultTitle = resultContainer.querySelector('.result-title');
+                const resultMessage = resultContainer.querySelector('.result-message');
+                const winningAmount = resultContainer.querySelector('.winning-amount');
+                
+                // Count icon frequencies to determine prize
+                const iconCounts = {};
+                assignedIcons.forEach(icon => {
+                    iconCounts[icon.class] = (iconCounts[icon.class] || 0) + 1;
+                });
+                
+                // Check if we have 3 or more of any icon
+                let maxCount = 0;
+                let winningIconClass = '';
+                
+                for (const iconClass in iconCounts) {
+                    if (iconCounts[iconClass] > maxCount) {
+                        maxCount = iconCounts[iconClass];
+                        winningIconClass = iconClass;
+                    }
+                }
+                
+                if (isWin && maxCount >= 3) {
+                    // Win condition
+                    const prizes = {
+                        'fas fa-coins': '1000$',
+                        'fas fa-gem': '500$',
+                        'fas fa-hammer': '200$',
+                        'fas fa-shovel': '100$',
+                        'fas fa-mountain': '50$'
+                    };
+                    
+                    const prize = prizes[winningIconClass] || '50$';
+                    
+                    if (resultIcon) resultIcon.innerHTML = `<i class="${winningIconClass}" style="color: ${assignedIcons.find(i => i.class === winningIconClass).color}"></i>`;
+                    if (resultTitle) resultTitle.textContent = 'Поздравляем!';
+                    if (resultMessage) resultMessage.textContent = `Вы выиграли ${prize}!`;
+                    if (winningAmount) {
+                        winningAmount.textContent = prize;
+                        winningAmount.style.display = 'block';
+                    }
+                } else {
+                    // Loss condition
+                    if (resultIcon) resultIcon.innerHTML = '<i class="fas fa-times-circle" style="color: #e74c3c;"></i>';
+                    if (resultTitle) resultTitle.textContent = 'К сожалению, не повезло';
+                    if (resultMessage) resultMessage.textContent = 'Попробуйте еще раз!';
+                    if (winningAmount) {
+                        winningAmount.style.display = 'none';
+                    }
+                }
+            }
+            
+            const newGameButton = document.querySelector('.new-game-btn');
+            if (newGameButton) {
+                newGameButton.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход - VortexOfChance</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/improved-styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/improved-login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="VortexOfChance Logo" width="24" height="24">
+                <span>VortexOfChance</span>
+            </a>
+        </div>
+        <button class="menu-btn">МЕНЮ</button>
+        <nav class="dropdown-menu">
+            <div class="menu-item">
+                <a href="buy-ticket.html">купить билетик</a>
+            </div>
+            <div class="menu-item">
+                <a href="#" class="has-submenu">мгновенные лотереи</a>
+                <div class="submenu">
+                    <a href="lucky_chance.html" class="submenu-item">Счастливый шанс</a>
+                    <a href="#" class="submenu-item">Мгновенный куш</a>
+                    <a href="#" class="submenu-item">Золотая лихорадка</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Победители</a>
+            </div>
+            <div class="menu-item">
+                <a href="my-tickets.html">Мои билеты</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Служба поддержки</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Правила игры</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Контакты</a>
+            </div>
+        </nav>
+        <a href="index.html" class="home-link"><i class="fas fa-home"></i> ГЛАВНАЯ</a>
+    </header>
+
+    <main>
+        <section class="login-container">
+            <h1>Вход в систему</h1>
+            
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="login">Вход</button>
+                <button class="tab-btn" data-tab="register">Регистрация</button>
+            </div>
+            
+            <div class="tab-content" id="login-tab">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Пароль</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Войти</button>
+                    </div>
+                    <div class="form-footer">
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="tab-content hidden" id="register-tab">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Имя</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Пароль</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm-password">Подтвердите пароль</label>
+                        <input type="password" id="register-confirm-password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn-primary">Зарегистрироваться</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Контакты</h3>
+                <p>220006, г. Минск, ул. Свердлова, 13а</p>
+                <p>Сектор документационного обеспечения</p>
+                <p>Тел./Факс.: (8-017) 393 62 17</p>
+                <p>E-mail: root@belstu.by</p>
+                <p>Приемная комиссия, Тел.: (8-017) 379 63 75</p>
+                <p>E-mail: pk@belstu.by</p>
+                <p>Регистрационное свидетельство № 114110144В от 13.06.2011</p>
+                <p>Государственного регистра информационных ресурсов</p>
+            </div>
+            <div class="quick-links">
+                <h3>Полезные ссылки</h3>
+                <a href="#">Связаться с нами</a>
+                <a href="#">Система обращений</a>
+                <a href="#">Почта университета</a>
+                <a href="#">Телефонный справочник</a>
+                <a href="#">Отозвать согласие на обработку куки</a>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/login.js"></script>
+    <script src="js/login-handler.js"></script>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const menuBtn = document.querySelector('.menu-btn');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            if (menuBtn && dropdownMenu) {
+                menuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('active');
+                });
+            }
+            
+            
+            const hasSubmenuLinks = document.querySelectorAll('.has-submenu');
+            hasSubmenuLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const submenu = this.nextElementSibling;
+                    if (submenu && submenu.classList.contains('submenu')) {
+                        submenu.classList.toggle('active');
+                    }
+                });
+            });
+            
+            
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown-menu') && !e.target.closest('.menu-btn')) {
+                    if (dropdownMenu) {
+                        dropdownMenu.classList.remove('active');
+                    }
+                    
+                    document.querySelectorAll('.submenu.active').forEach(submenu => {
+                        submenu.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

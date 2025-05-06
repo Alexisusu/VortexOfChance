@@ -1,0 +1,782 @@
+.game-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #00c6fb, #005bea);
+  color: white;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.game-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+  opacity: 0.3;
+}
+.game-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.game-header p {
+  font-size: 1.1rem;
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.game-section {
+  padding: 2rem 0 4rem;
+  background-color: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  overflow: hidden;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.game-rules h2 {
+  color: #003b97;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+.game-rules p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+.game-rules ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.game-rules ul li {
+  margin-bottom: 0.5rem;
+  color: #666;
+}
+
+.prize-table {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+}
+.prize-table h3 {
+  color: #003b97;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.prize-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed rgba(0, 59, 151, 0.2);
+}
+.prize-item:last-child {
+  border-bottom: none;
+}
+.prize-item .prize-icon {
+  color: #003b97;
+  font-size: 1.2rem;
+  width: 40px;
+  display: inline-block;
+  text-align: center;
+}
+.prize-item .prize-icon .fa-gem {
+  color: #9c27b0;
+  animation: shine 2s infinite alternate;
+}
+.prize-item .prize-icon .fa-star {
+  color: #ffc107;
+  animation: rotate 4s infinite linear;
+}
+.prize-item .prize-icon .fa-crown {
+  color: #ff9800;
+}
+.prize-item .prize-icon .fa-trophy {
+  color: #4caf50;
+}
+.prize-item .prize-icon .fa-gift {
+  color: #e91e63;
+}
+.prize-item .prize-icon .fa-coins {
+  color: #ffc107;
+}
+.prize-item .prize-value {
+  font-weight: bold;
+  color: #003b97;
+}
+
+.game-controls {
+  background-color: #f5f5f5;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.game-controls .game-price {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.game-controls .game-price .price-value {
+  font-weight: bold;
+  color: #003b97;
+}
+.game-controls .buy-ticket-btn, .game-controls .reveal-all-btn, .game-controls .new-game-btn {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.game-controls .buy-ticket-btn:hover:not(:disabled), .game-controls .reveal-all-btn:hover:not(:disabled), .game-controls .new-game-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.game-controls .buy-ticket-btn:active:not(:disabled), .game-controls .reveal-all-btn:active:not(:disabled), .game-controls .new-game-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+.game-controls .buy-ticket-btn:disabled, .game-controls .reveal-all-btn:disabled, .game-controls .new-game-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.game-controls .buy-ticket-btn {
+  background-color: #005bea;
+  color: white;
+}
+.game-controls .buy-ticket-btn:hover:not(:disabled) {
+  background-color: rgb(0, 81.0833333333, 208.5);
+}
+.game-controls .reveal-all-btn {
+  background-color: #003b97;
+  color: white;
+}
+.game-controls .reveal-all-btn:hover:not(:disabled) {
+  background-color: rgb(0, 49.0364238411, 125.5);
+}
+.game-controls .new-game-btn {
+  background-color: #6c757d;
+  color: white;
+}
+.game-controls .new-game-btn:hover:not(:disabled) {
+  background-color: rgb(96.1802575107, 104.19527897, 111.3197424893);
+}
+.game-controls .scratchcard-info {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.game-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.scratch-area {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.scratch-area.disabled {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.scratch-card {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#scratch-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+  z-index: 10;
+  touch-action: none;
+  background-color: #8c8c8c;
+  display: block;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  will-change: transform;
+}
+
+.symbols-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  background-color: #ddd;
+  z-index: 5;
+  padding: 4px;
+  pointer-events: none;
+}
+
+.symbol-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  z-index: 6;
+}
+.symbol-cell i {
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+.symbol-cell i.revealed {
+  opacity: 1;
+  transform: scale(1);
+  animation: reveal-symbol 0.5s ease-out forwards;
+}
+.symbol-cell .fa-gem {
+  color: #9c27b0;
+  text-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+}
+.symbol-cell .fa-star {
+  color: #ffc107;
+  animation: rotate 4s infinite linear;
+}
+.symbol-cell .fa-crown {
+  color: #ff9800;
+}
+.symbol-cell .fa-trophy {
+  color: #4caf50;
+}
+.symbol-cell .fa-gift {
+  color: #e91e63;
+}
+.symbol-cell .fa-coins {
+  color: #ffc107;
+}
+
+.scratch-message {
+  text-align: center;
+  padding: 1rem;
+}
+.scratch-message .scratch-instructions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #666;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.scratch-message .scratch-instructions i {
+  animation: point 2s infinite alternate;
+}
+.scratch-message .scratch-instructions p {
+  margin-top: 0.5rem;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+.scratch-message .scratch-progress-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 15px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+.scratch-message .scratch-progress-container p {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+.scratch-message .scratch-progress-container .scratch-progress {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffd700;
+  display: inline-block;
+  min-width: 50px;
+  text-align: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.scratch-message .scratch-progress-container .progress-bar-container {
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.scratch-message .scratch-progress-container .progress-bar-container .progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ffb300, #ff6d00);
+  width: 0%;
+  transition: width 0.3s ease-out;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(255, 109, 0, 0.5);
+}
+
+.game-result {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+.game-result .result-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #6c757d;
+}
+.game-result .result-icon.winner {
+  color: #4caf50;
+  animation: pulse 1s infinite alternate;
+}
+.game-result .result-icon.loser {
+  color: #f44336;
+}
+.game-result .result-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.game-result .result-message {
+  margin-bottom: 1rem;
+  color: #666;
+}
+.game-result .winning-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b97;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(0, 198, 251, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.bonus-game {
+  margin-top: 2rem;
+  padding: 2rem 0;
+  background-color: #f8f4e6;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+.bonus-game .container {
+  max-width: 900px;
+}
+.bonus-game .bonus-container {
+  text-align: center;
+  padding: 2rem;
+}
+.bonus-game .bonus-container .bonus-title {
+  color: #003b97;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+.bonus-game .bonus-container .bonus-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #005bea, transparent);
+}
+.bonus-game .bonus-container .bonus-description {
+  color: #555;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+.bonus-game .bonus-container .treasure-chests {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  perspective: 1000px;
+}
+@media (max-width: 768px) {
+  .bonus-game .bonus-container .treasure-chests {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.bonus-game .bonus-container .chest {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+.bonus-game .bonus-container .chest.hover:not(.selected):not(.revealed) {
+  transform: translateY(-10px) scale(1.05);
+}
+.bonus-game .bonus-container .chest.selected {
+  transform: scale(1.1);
+}
+.bonus-game .bonus-container .chest.revealed {
+  transform: rotateY(180deg);
+}
+.bonus-game .bonus-container .chest .chest-front, .bonus-game .bonus-container .chest .chest-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  backface-visibility: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.bonus-game .bonus-container .chest .chest-front {
+  background: linear-gradient(135deg, #b89747, #ffdc73);
+  z-index: 2;
+}
+.bonus-game .bonus-container .chest .chest-front i {
+  font-size: 4rem;
+  color: #8a5e00;
+}
+.bonus-game .bonus-container .chest .chest-back {
+  background: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.bonus-game .bonus-container .chest .chest-back .prize-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #003b97;
+  animation: appear 0.5s ease-out;
+}
+.bonus-game .bonus-container .chest .chest-back .prize-amount::before {
+  content: "+";
+  margin-right: 2px;
+  font-size: 1.5rem;
+  vertical-align: super;
+  color: #4caf50;
+}
+.bonus-game .bonus-container .bonus-result {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.5s ease-out;
+}
+.bonus-game .bonus-container .bonus-result .bonus-result-icon {
+  font-size: 3rem;
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+.bonus-game .bonus-container .bonus-result .bonus-result-icon i {
+  animation: pulse 1.5s infinite;
+}
+.bonus-game .bonus-container .bonus-result .bonus-result-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+.bonus-game .bonus-container .bonus-result .bonus-win-amount {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #003b97;
+  margin-bottom: 2rem;
+}
+.bonus-game .bonus-container .bonus-result .bonus-win-amount::before {
+  content: "+";
+  color: #4caf50;
+  margin-right: 5px;
+  font-size: 1.8rem;
+  vertical-align: super;
+}
+.bonus-game .bonus-container .bonus-result .bonus-continue-btn {
+  background: linear-gradient(135deg, #00c6fb, #005bea);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.bonus-game .bonus-container .bonus-result .bonus-continue-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 91, 234, 0.4);
+}
+.bonus-game .bonus-container .bonus-result .bonus-continue-btn:active {
+  transform: translateY(-1px);
+}
+
+@keyframes shine {
+  from {
+    text-shadow: 0 0 5px rgba(156, 39, 176, 0.5);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(156, 39, 176, 0.9);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes point {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: confetti-fall 3s ease-in-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200px) rotate(720deg);
+    opacity: 0;
+  }
+}
+@keyframes progress-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes reveal-symbol {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 991px) {
+  .game-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .game-info {
+    gap: 1.5rem;
+  }
+  .game-controls {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .game-controls .game-price {
+    flex: 1 0 100%;
+  }
+  .game-controls .buy-ticket-btn, .game-controls .reveal-all-btn, .game-controls .new-game-btn {
+    flex: 1;
+  }
+  .game-controls .scratchcard-info {
+    flex: 1 0 100%;
+  }
+  .treasure-chests {
+    gap: 1rem;
+  }
+  .chest {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .game-header {
+    padding: 2rem 1rem;
+  }
+  .game-header h1 {
+    font-size: 2rem;
+  }
+  .game-header p {
+    font-size: 1rem;
+  }
+  .game-container {
+    padding: 1.5rem;
+  }
+  .scratch-card {
+    height: 250px;
+  }
+  .symbol-cell {
+    font-size: 2rem;
+  }
+  .chest {
+    width: 80px;
+    height: 80px;
+  }
+  .chest-front {
+    font-size: 2.5rem;
+  }
+  .chest-back {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .game-container {
+    padding: 1rem;
+  }
+  .scratch-card {
+    height: 220px;
+  }
+  .symbol-cell {
+    font-size: 1.75rem;
+  }
+  .prize-table {
+    padding: 0.75rem;
+  }
+  .prize-item .prize-icon {
+    font-size: 1rem;
+  }
+  .game-controls {
+    padding: 1rem;
+  }
+  .treasure-chests {
+    gap: 0.5rem;
+  }
+  .chest {
+    width: 70px;
+    height: 70px;
+  }
+  .chest-front {
+    font-size: 2rem;
+  }
+  .chest-back {
+    font-size: 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=instant-cash.css.map */

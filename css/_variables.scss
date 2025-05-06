@@ -1,0 +1,61 @@
+$primary-color: #5b21b6;
+$primary-light: #8b5cf6;
+$primary-dark: #4c1d95;
+$accent-color: #f59e0b;
+$accent-dark: #d97706;
+$accent-light: #fbbf24;
+$secondary-color: #059669;
+$secondary-dark: #047857;
+$secondary-light: #10b981;
+$success-color: #10b981;
+$danger-color: #ef4444;
+$warning-color: #f59e0b;
+$info-color: #3b82f6;
+
+$card-bg: #ffffff;
+$dark-bg: #1f2937;
+$light-bg: #f9fafb;
+
+$text-dark: #1f2937;
+$text-color: #374151;
+$text-light: #6b7280;
+$text-white: #f9fafb;
+
+$blue-light: #93c5fd;
+$blue-medium: #3b82f6;
+$blue-dark: #1d4ed8;
+
+$border-color: #e5e7eb;
+$border-dark: #d1d5db;
+
+$border-radius-sm: 0.25rem;
+$border-radius: 0.5rem;
+$border-radius-lg: 0.75rem;
+
+$shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+$box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$box-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+$transition: all 0.3s ease;
+$transition-slow: all 0.5s ease;
+
+$container-width: 1200px;
+$container-padding: 15px;
+
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+$grid-gap: 20px;
+$grid-gap-lg: 30px;
+
+$header-height: 60px;
+$footer-padding: 60px;
+
+$z-index-dropdown: 1000;
+$z-index-header: 100;
+$z-index-modal: 2000;
+$z-index-overlay: 1500; 

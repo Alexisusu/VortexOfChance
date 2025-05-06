@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мгновенный куш - VortexOfChance</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/improved-styles.css">
+    <link rel="stylesheet" href="css/instant-cash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo.svg" alt="VortexOfChance Logo">
+                <span>VortexOfChance</span>
+            </a>
+        </div>
+        <button class="menu-btn">МЕНЮ</button>
+        <nav class="dropdown-menu">
+            <div class="menu-item">
+                <a href="buy-ticket.html">купить билетик</a>
+            </div>
+            <div class="menu-item">
+                <a href="#" class="has-submenu">мгновенные лотереи</a>
+                <div class="submenu">
+                    <a href="lucky_chance.html" class="submenu-item">Счастливый шанс</a>
+                    <a href="instant-cash.html" class="submenu-item">Мгновенный куш</a>
+                    <a href="golden-rush.html" class="submenu-item">Золотая лихорадка</a>
+                </div>
+            </div>
+            <div class="menu-item">
+                <a href="#">Победители</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Служба поддержки</a>
+            </div>
+            <div class="menu-item">
+                <a href="#">Правила игры</a>
+            </div>
+        </nav>
+        <a href="login.html" class="login-btn">ВХОД</a>
+    </header>
+
+    <main>
+        <section class="game-header">
+            <div class="container">
+                <h1>Мгновенный куш</h1>
+                <p>Сотрите защитный слой и получите мгновенный выигрыш!</p>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div class="container">
+                <div class="game-container">
+                    <div class="game-info">
+                        <div class="game-rules">
+                            <h2>Правила игры</h2>
+                            <p>Сотрите защитный слой с ячеек и найдите выигрышную комбинацию!</p>
+                            <ul>
+                                <li><strong>3 одинаковых символа</strong> - выигрыш по таблице призов</li>
+                                <li><strong>3 бриллианта</strong> - супер-джекпот 5000$!</li>
+                                <li><strong>3 звезды</strong> - дополнительная игра!</li>
+                            </ul>
+                            <div class="prize-table">
+                                <h3>Таблица призов</h3>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-gem"></i></span>
+                                    <span class="prize-value">5000$</span>
+                                    <span class="prize-odds">шанс 1:500</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-star"></i></span>
+                                    <span class="prize-value">Бонусная игра</span>
+                                    <span class="prize-odds">шанс 1:200</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-crown"></i></span>
+                                    <span class="prize-value">1000$</span>
+                                    <span class="prize-odds">шанс 1:167</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-trophy"></i></span>
+                                    <span class="prize-value">500$</span>
+                                    <span class="prize-odds">шанс 1:125</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-gift"></i></span>
+                                    <span class="prize-value">250$</span>
+                                    <span class="prize-odds">шанс 1:83</span>
+                                </div>
+                                <div class="prize-item">
+                                    <span class="prize-icon"><i class="fas fa-coins"></i></span>
+                                    <span class="prize-value">100$</span>
+                                    <span class="prize-odds">шанс 1:67</span>
+                                </div>
+                            </div>
+                            <div class="bonus-prize-info">
+                                <h3>Бонусная игра</h3>
+                                <p>Выберите один из трех сундуков и выиграйте до 1000$</p>
+                                <ul>
+                                    <li>300$ - шанс 65%</li>
+                                    <li>500$ - шанс 25%</li>
+                                    <li>1000$ - шанс 10%</li>
+                                </ul>
+                            </div>
+                            <div class="overall-odds">
+                                <p>Общий шанс на выигрыш: примерно 1:4.5</p>
+                                <p>Теоретический возврат игроку (RTP): 65%</p>
+                            </div>
+                        </div>
+                        <div class="game-controls">
+                            <div class="game-price">
+                                <span>Стоимость: </span>
+                                <span class="price-value">20$</span>
+                            </div>
+                            <button class="buy-ticket-btn">Купить билет</button>
+                            <div class="scratchcard-info">
+                                <p>Cотрите защитный слой, водя мышью или пальцем по ячейкам билета</p>
+                            </div>
+                            <button class="reveal-all-btn" disabled>Открыть всё</button>
+                            <button class="new-game-btn" style="display: none;">Новая игра</button>
+                        </div>
+                    </div>
+                    
+                    <div class="game-field">
+                        <div class="scratch-area disabled">
+                            <div class="scratch-card">
+                                <canvas id="scratch-canvas" width="450" height="300" crossorigin="anonymous"></canvas>
+                                <div class="symbols-container">
+                                    <div class="symbol-cell" data-index="0"></div>
+                                    <div class="symbol-cell" data-index="1"></div>
+                                    <div class="symbol-cell" data-index="2"></div>
+                                    <div class="symbol-cell" data-index="3"></div>
+                                    <div class="symbol-cell" data-index="4"></div>
+                                    <div class="symbol-cell" data-index="5"></div>
+                                    <div class="symbol-cell" data-index="6"></div>
+                                    <div class="symbol-cell" data-index="7"></div>
+                                    <div class="symbol-cell" data-index="8"></div>
+                                </div>
+                            </div>
+                            <div class="scratch-message">
+                                <div class="scratch-instructions">
+                                    <i class="fas fa-hand-pointer"></i>
+                                    <p>Сотрите защитный слой мышью или пальцем</p>
+                                </div>
+                                <div class="scratch-progress-container">
+                                    <p>Прогресс стирания: <span class="scratch-progress">0%</span></p>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="game-result" style="display: none;">
+                            <div class="result-icon"><i class="fas fa-question-circle"></i></div>
+                            <h3 class="result-title">Результат</h3>
+                            <p class="result-message">Сотрите защитный слой, чтобы увидеть результат!</p>
+                            <div class="winning-amount" style="display: none;">0$</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="bonus-game" style="display: none;">
+            <div class="container">
+                <div class="bonus-container">
+                    <h2 class="bonus-title">Бонусная игра</h2>
+                    <p class="bonus-description">Выберите один из сундуков, чтобы получить дополнительный приз!</p>
+                    
+                    <div class="treasure-chests">
+                        <div class="chest" data-index="0">
+                            <div class="chest-front"><i class="fas fa-box-open"></i></div>
+                            <div class="chest-back"></div>
+                        </div>
+                        <div class="chest" data-index="1">
+                            <div class="chest-front"><i class="fas fa-box-open"></i></div>
+                            <div class="chest-back"></div>
+                        </div>
+                        <div class="chest" data-index="2">
+                            <div class="chest-front"><i class="fas fa-box-open"></i></div>
+                            <div class="chest-back"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bonus-result" style="display: none;">
+                        <div class="bonus-result-icon"><i class="fas fa-gift"></i></div>
+                        <h3 class="bonus-result-title">Ваш бонусный приз:</h3>
+                        <div class="bonus-win-amount">500$</div>
+                        <button class="bonus-continue-btn">Продолжить</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#2c2c2c" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,122.7C1248,107,1344,85,1392,74.7L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>VortexOfChance — это современная платформа для участия в лотереях. Мы предлагаем разнообразные лотереи с прозрачными правилами и честными розыгрышами.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Полезные ссылки</h3>
+                <ul class="footer-links">
+                    <li><a href="winners.html"><i class="fas fa-trophy"></i> Победители</a></li>
+                    <li><a href="rules.html"><i class="fas fa-gavel"></i> Правила</a></li>
+                    <li><a href="support.html"><i class="fas fa-headset"></i> Служба поддержки</a></li>
+                    <li><a href="faq.html"><i class="fas fa-question-circle"></i> Частые вопросы</a></li>
+                    <li><a href="terms.html"><i class="fas fa-file-alt"></i> Условия использования</a></li>
+                    <li><a href="privacy.html"><i class="fas fa-shield-alt"></i> Политика конфиденциальности</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 220000, г. Минск, ул. Лотерейная, 777</li>
+                    <li><i class="fas fa-phone"></i> +375 29 123-45-67</li>
+                    <li><i class="fas fa-envelope"></i> info@vortexofchance.com</li>
+                </ul>
+                <div class="subscribe-form">
+                    <h4>Подпишитесь на новости</h4>
+                    <div class="form-group">
+                        <input type="email" placeholder="Ваш email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2023 VortexOfChance. Все права защищены.</p>
+            <div class="footer-bottom-links">
+                <a href="terms.html">Условия использования</a>
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="responsible.html">Ответственная игра</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="js/main.js"></script>
+    <script src="js/instant-cash.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            function setupBuyButton() {
+            var buyBtn = document.querySelector('.buy-ticket-btn');
+                if (!buyBtn) return;
+                
+                var newBuyBtn = buyBtn.cloneNode(true);
+                if (buyBtn.parentNode) {
+                buyBtn.parentNode.replaceChild(newBuyBtn, buyBtn);
+                }
+                
+                newBuyBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    if (typeof buyTicket === 'function') {
+                        buyTicket();
+                    } else {
+                        console.error('Функция buyTicket не найдена');
+                    }
+                });
+            }
+            
+            function ensureCanvasProperties() {
+                setTimeout(function() {
+                    var canvas = document.getElementById('scratch-canvas');
+                    if (canvas) {
+                        if (!canvas.style.mixBlendMode) {
+                            canvas.style.mixBlendMode = 'normal';
+                        }
+                        
+                        var style = document.createElement('style');
+                        style.innerHTML = `
+                            #scratch-canvas {
+                                background-color: #8c8c8c !important;
+                                position: absolute !important;
+                                width: 100% !important;
+                                height: 100% !important;
+                                z-index: 10 !important;
+                                top: 0 !important;
+                                left: 0 !important;
+                            }
+                            .symbol-cell i.revealed {
+                                opacity: 1 !important;
+                                transform: scale(1) !important;
+                                animation: reveal-symbol 0.5s ease-out forwards !important;
+                            }
+                        `;
+                        document.head.appendChild(style);
+                    }
+                }, 100);
+            }
+            
+            setTimeout(function() {
+                setupBuyButton();
+                ensureCanvasProperties();
+                
+                if (typeof initGame === 'function') {
+                    initGame();
+                } else {
+                    console.error('Функция initGame не найдена');
+                }
+            }, 300);
+        });
+    </script>
+</body>
+</html> 
